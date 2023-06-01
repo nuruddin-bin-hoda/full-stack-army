@@ -27,28 +27,29 @@
     > তৈরি করা যাবে না। এই সিস্টেমে করলে memory তে জায়গা কম লাগবে।
 
     ```jsx
-    let arr2 = [1, 2, 3, null, false, 6];
+    const arr = [1, 2, 3, null, false, undefined, 4, 5, "", "test", 6, 7, NaN];
 
-    count = 0;
-    for (let i = 0; i < arr2.length; i++) {
-    	for (let j = i; j < arr2.length - 1; j++) {
-    		if (!arr2[j] || typeof arr2[j] !== 'number') {
-    			arr2[j] = arr2[j + 1];
-    			arr2[j + 1] = undefined;
-    		}
-    	}
-
-    	if (arr2[i] == undefined) {
-    		count++;
-    	}
+    let i,
+      j = 0;
+    for (i = 0; i < arr.length; i++) {
+      if (typeof arr[i] === "number" && !isNaN(arr[i])) {
+        arr[j++] = arr[i];
+      }
     }
-    arr2.length -= count; //Array থেকে undefined গুলো বাদ দিলাম
-    console.log(count, arr2);
+    arr.length -= i - j;
+
+    console.log(arr);
     ```
 
     `Result:`
 
-    ![code](./img/2.jpeg 'Result')
+    ```jsx
+    node script.js
+    [
+    1, 2, 3, 4,
+    5, 6, 7    
+    ]
+    ```
 
     </br>
 
