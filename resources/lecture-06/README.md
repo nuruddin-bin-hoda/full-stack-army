@@ -127,6 +127,8 @@
     	console.log();
     });
     ```
+  - Map Filter Sandwich  
+    ![Map, Filter Sandwich](https://clojurebridgelondon.github.io/workshop/images/map-reduce-sandwich.png "map filter sandwich")
 
 - Object as a Data Structure
 
